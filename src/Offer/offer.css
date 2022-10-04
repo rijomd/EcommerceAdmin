@@ -1,0 +1,28 @@
+input {
+  border: none;
+}
+:focus-visible {
+  outline: none;
+}
+
+.react-datepicker-wrapper {
+  border: 1px solid #e5dfe4;
+  height: 40px;
+  padding: 5px;
+}
+.offer_images {
+  margin: 5px;
+  display: flex;
+}
+.offer_images img {
+  object-fit: contain;
+  height: 100px;
+}
+.offer_images i {
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  .offer_images img {
+    width: 100%;
+  }
+}

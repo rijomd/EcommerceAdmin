@@ -1,0 +1,19 @@
+.attributes {
+  justify-content: center;
+  background-color: white;
+  margin: 0px;
+  margin-top: 1rem;
+  padding: 5px 1rem;
+}
+.attributes h7 {
+  text-align: center;
+}
+.attributes div {
+  padding: 5px;
+}
+.attributes row {
+  padding: 5px;
+}
+.common_attributes label {
+  padding-right: 5px;
+}

@@ -1,0 +1,75 @@
+.css-1s2u09g-control {
+  border-style: none !important;
+}
+
+.center {
+  text-align: "center";
+}
+
+.form-row p {
+  padding: "0px";
+}
+
+.imagediv {
+  height: 100px;
+}
+.imagediv img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+.category_image {
+  width: 50%;
+  height: 40px;
+  object-fit: contain;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.pagination {
+  justify-content: center;
+}
+ul.pagination li.active a {
+  color: white;
+}
+ul.pagination li.active {
+  background-color: #337ab7;
+}
+
+ul.pagination li a:hover,
+ul.pagination li a.active {
+  color: blue;
+}
+
+@media (min-width: 992px) {
+  .margin-2-res button {
+    width: 40%;
+  }
+}
+.category_logo {
+  width: 50%;
+  height: 150px;
+  object-fit: contain;
+}
+.category_banner {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 7px;
+}
+.menuheaderadd {
+  display: flex;
+}
+.menuheaderadd a {
+  flex: 1;
+  font-size: 13px;
+  padding: 5px;
+}
+.renderSelcted_category {
+  border: 1px solid #ccc;
+}
+.renderSelcted_category p{
+  font-size: 13px;
+    margin: 0px;
+    padding: 5px;
+}

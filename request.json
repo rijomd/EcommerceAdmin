@@ -1,0 +1,689 @@
+{
+    "info": {
+        "name": "flipcartclone_Backend",
+        "schema": "URL='mongodb://127.0.0.1:27017/flipclone'"
+    },
+    "item": [
+        {
+            "name": "signup_section",
+            "item": [
+                {
+                    "name": "activate",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:4000/iapi/activate"
+                    },
+                    "response": {
+                        "header": [
+                            "application/json"
+                        ],
+                        "body": {
+                            "error_code": 0,
+                            "message": "Sucessfully added",
+                            "data": {
+                                "user": {
+                                    "activation_status": 1,
+                                    "_id": "62d0ee1fa900332d15aba482",
+                                    "name": "admin",
+                                    "email": "admin@flip.com",
+                                    "phone": "1234567890",
+                                    "hash_password": "$2b$10$O0o.cerVXk.ITFjQLNFu4eSBtlPzF/AHeTb.HK3qpuq5mKq5tctvS",
+                                    "role": 1,
+                                    "status": 1,
+                                    "createdtime": 1657859615501,
+                                    "updatedtime": 1657859615501,
+                                    "createdAt": "2022-07-15T04:33:35.807Z",
+                                    "updatedAt": "2022-07-15T04:33:35.807Z",
+                                    "__v": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "Content-Type": "application/json"
+                            }
+                        ],
+                        "params": {
+                            "password": "flip@123",
+                            "phone": "1234567890",
+                            "role": 1
+                        },
+                        "url": "http://localhost:4000/iapi/login"
+                    },
+                    "response": {
+                        "error_code": 0,
+                        "message": "Sucessfully added",
+                        "data": {
+                            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwOTAwLCJleHAiOjE2NjA0NTI5MDB9.GYM-JDIYhhX7AS2InjiMup45e5oTPaPXf7P8J1Q_8ro",
+                            "user": {
+                                "_id": "62d0ee1fa900332d15aba482",
+                                "name": "admin",
+                                "email": "admin@flip.com",
+                                "phone": "1234567890",
+                                "role": 1
+                            },
+                            "auth": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "User",
+                    "item": [
+                        {
+                            "name": "adduser",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "email": "rijomd@mail.com",
+                                    "name": "Rijo Md",
+                                    "password": "123",
+                                    "phone": "7034910254",
+                                    "role": 3
+                                },
+                                "url": "http://localhost:4000/iapi/addUser"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "_id": "62d0f62fa5f2f615ca007d45",
+                                    "__v": 0,
+                                    "activation_status": 0,
+                                    "createdAt": "2022-07-15T05:07:59.745Z",
+                                    "createdtime": 1657861679742,
+                                    "email": "sellerone@mail.com",
+                                    "name": "Rijo Md",
+                                    "phone": "7034910251",
+                                    "role": 3,
+                                    "status": 1,
+                                    "updatedAt": "2022-07-15T05:07:59.745Z"
+                                }
+                            }
+                        },
+                        {
+                            "name": "userlist",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "role": 3,
+                                    "status": 1
+                                },
+                                "url": "http://localhost:4000/iapi/userlist"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "docs": [
+                                        {
+                                            "_id": "62d0f5b8a5f2f615ca007d41",
+                                            "__v": 0,
+                                            "activation_status": 0,
+                                            "createdAt": "2022-07-15T05:06:00.705Z",
+                                            "createdtime": 1657861560696,
+                                            "email": "rijomd@mail.com",
+                                            "name": "Rijo Md",
+                                            "phone": "7034910254",
+                                            "role": 3,
+                                            "status": 1,
+                                            "updatedAt": "2022-07-15T05:06:00.705Z"
+                                        }
+                                    ],
+                                    "total": 1,
+                                    "page": 1,
+                                    "pages": 1
+                                }
+                            }
+                        },
+                        {
+                            "name": "deleteuser",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "delete": true,
+                                    "_id": ""
+                                },
+                                "url": "http://localhost:4000/iapi/addUser"
+                            },
+                            "response": {
+                                "data": {},
+                                "error_code": 0,
+                                "message": "Sucessfully added"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "category",
+                    "item": [
+                        {
+                            "name": "addcategory",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "image": "",
+                                    "name": "",
+                                    "parent_id": ""
+                                },
+                                "url": "http://localhost:4000/iapi/categoryAdd"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "childs": [],
+                                    "_id": "62d0fcb697a1ca2f4b2fd7a4",
+                                    "image": "https://gshopclone.s3.amazonaws.com/ukQ199eWG-phone1.jpg",
+                                    "name": "sample",
+                                    "status": 1,
+                                    "slug": "sample",
+                                    "createdtime": 1657863350013,
+                                    "type": 1,
+                                    "__v": 0
+                                }
+                            }
+                        },
+                        {
+                            "name": "editcategory",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "image": "",
+                                    "name": "",
+                                    "parent_id": ""
+                                },
+                                "url": "http://localhost:4000/iapi/categoryAdd"
+                            },
+                            "response": [
+                                {
+                                    "success": {
+                                        "error_code": 0,
+                                        "message": "Sucessfully added",
+                                        "data": {
+                                            "childs": [],
+                                            "_id": "62d0fcb697a1ca2f4b2fd7a4",
+                                            "image": "https://gshopclone.s3.amazonaws.com/ukQ199eWG-phone1.jpg",
+                                            "name": "sample",
+                                            "status": 1,
+                                            "slug": "sample",
+                                            "createdtime": 1657863350013,
+                                            "type": 1,
+                                            "__v": 0
+                                        }
+                                    },
+                                    "error": {
+                                        "error_code": 11,
+                                        "message": "Oops something wrong",
+                                        "data": {
+                                            "error_code": -11,
+                                            "message": "Oops something wrong",
+                                            "data": {
+                                                "error_code": {},
+                                                "message": ""
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "deletecategory",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "delete": true,
+                                    "_id": ""
+                                },
+                                "url": "http://localhost:4000/iapi/categoryAdd"
+                            },
+                            "response": {
+                                "data": {},
+                                "error_code": 0,
+                                "message": "Sucessfully added"
+                            }
+                        },
+                        {
+                            "name": "listcategory",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "pageVo": {
+                                        "pageNo": 1,
+                                        "noOfItems": 15
+                                    },
+                                    "status": 1
+                                },
+                                "url": "http://localhost:4000/iapi/categoryAdd"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "docs": [
+                                        {
+                                            "_id": "62d0fba397a1ca2f4b2fd79f",
+                                            "childs": [],
+                                            "name": "Mobile",
+                                            "image": "https://gshopclone.s3.amazonaws.com/ukQ199eWG-phone1.jpg",
+                                            "status": 1,
+                                            "slug": "Mobile",
+                                            "createdtime": 1657863075446,
+                                            "type": 1,
+                                            "__v": 0
+                                        }
+                                    ],
+                                    "total": 1,
+                                    "page": 1,
+                                    "pages": 1
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "Image",
+                    "item": [
+                        {
+                            "name": "addimage",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "file": "(binary)"
+                                },
+                                "url": "http://localhost:4000/iapi/imageAdd"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "_id": "62d10286474694106f1c3024",
+                                    "status": 1,
+                                    "createdtime": 1657864838285,
+                                    "image": "https://gshopclone.s3.ap-south-1.amazonaws.com/SqxevBXbq-grocery.jpg",
+                                    "user_id": "62d0ee1fa900332d15aba482",
+                                    "__v": 0
+                                }
+                            }
+                        },
+                        {
+                            "name": "imagelist",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "role": 3,
+                                    "status": 1
+                                },
+                                "url": "http://localhost:4000/iapi/imagelist"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "docs": [
+                                        {
+                                            "_id": "62d0fb9897a1ca2f4b2fd799",
+                                            "status": 1,
+                                            "createdtime": 1657863064587,
+                                            "image": "https://gshopclone.s3.amazonaws.com/ukQ199eWG-phone1.jpg",
+                                            "user_id": "62d0ee1fa900332d15aba482",
+                                            "__v": 0,
+                                            "id": "62d0fb9897a1ca2f4b2fd799"
+                                        }
+                                    ],
+                                    "total": 1,
+                                    "limit": 10,
+                                    "page": 1,
+                                    "pages": 1
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "product",
+                    "item": [
+                        {
+                            "name": "addproduct",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "category": "62d0fba397a1ca2f4b2fd79f",
+                                    "createdBy": "62d0f5b8a5f2f615ca007d41",
+                                    "description": "something...",
+                                    "name": "Realme",
+                                    "orginal_price": "7000",
+                                    "sell_price": "6500",
+                                    "specifications": [],
+                                    "productPictures": []
+                                },
+                                "url": "http://localhost:4000/iapi/productAdd"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "specifications": [],
+                                    "productPictures": [
+                                        "https://gshopclone.s3.amazonaws.com/zzNMVF9iJ-phone2.jpg",
+                                        "https://gshopclone.s3.ap-south-1.amazonaws.com/NHWc4MZVZ-phone3.jpg",
+                                        "https://gshopclone.s3.ap-south-1.amazonaws.com/YkfY4NsDt-phone4.jpg"
+                                    ],
+                                    "_id": "62d112d1f9d52c016125f2dc",
+                                    "reviews": [],
+                                    "name": "Realme",
+                                    "createdBy": "62d0f5b8a5f2f615ca007d41",
+                                    "category": "62d0fba397a1ca2f4b2fd79f",
+                                    "description": "something...",
+                                    "orginal_price": 7000,
+                                    "sell_price": 6500,
+                                    "status": 1,
+                                    "slug": "Realme",
+                                    "createdtime": 1657869009448,
+                                    "createdAt": "2022-07-15T07:10:09.484Z",
+                                    "updatedAt": "2022-07-15T07:10:09.484Z",
+                                    "__v": 0
+                                }
+                            }
+                        },
+                        {
+                            "name": "editproduct",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "category": "62d0fba397a1ca2f4b2fd79f",
+                                    "createdAt": "2022-07-15T07:10:09.484Z",
+                                    "createdBy": "62d0f5b8a5f2f615ca007d41",
+                                    "createdtime": 1657869009448,
+                                    "description": "something...",
+                                    "name": "Realme c11",
+                                    "orginal_price": 7000,
+                                    "reviews": [],
+                                    "sell_price": "6600",
+                                    "slug": "Realme",
+                                    "specifications": [],
+                                    "status": 1,
+                                    "updatedAt": "2022-07-15T08:39:28.778Z",
+                                    "updatedtime": 1657874368762,
+                                    "__v": 0,
+                                    "_id": "62d112d1f9d52c016125f2dc",
+                                    "productPictures": []
+                                },
+                                "url": "http://localhost:4000/iapi/productAdd"
+                            },
+                            "response": [
+                                {
+                                    "error_code": 0,
+                                    "message": "Sucessfully added",
+                                    "data": {
+                                        "_id": "62d112d1f9d52c016125f2dc",
+                                        "specifications": [],
+                                        "productPictures": [
+                                            "https://gshopclone.s3.amazonaws.com/zzNMVF9iJ-phone2.jpg",
+                                            "https://gshopclone.s3.ap-south-1.amazonaws.com/NHWc4MZVZ-phone3.jpg"
+                                        ],
+                                        "reviews": [],
+                                        "name": "Realme c11",
+                                        "createdBy": "62d0f5b8a5f2f615ca007d41",
+                                        "category": "62d0fba397a1ca2f4b2fd79f",
+                                        "description": "something...",
+                                        "orginal_price": 7000,
+                                        "sell_price": 6500,
+                                        "status": 1,
+                                        "slug": "Realme",
+                                        "createdtime": 1657869009448,
+                                        "createdAt": "2022-07-15T07:10:09.484Z",
+                                        "updatedAt": "2022-07-15T08:39:28.778Z",
+                                        "__v": 0,
+                                        "updatedtime": 1657874368762
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "productlist",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "pageVo": {
+                                        "pageNo": 1,
+                                        "noOfItems": 15
+                                    },
+                                    "status": 1
+                                },
+                                "url": "http://localhost:4000/iapi/productlist"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "docs": [
+                                        {
+                                            "_id": "62d112d1f9d52c016125f2dc",
+                                            "specifications": [],
+                                            "productPictures": [
+                                                "https://gshopclone.s3.amazonaws.com/zzNMVF9iJ-phone2.jpg",
+                                                "https://gshopclone.s3.ap-south-1.amazonaws.com/NHWc4MZVZ-phone3.jpg",
+                                                "https://gshopclone.s3.ap-south-1.amazonaws.com/YkfY4NsDt-phone4.jpg"
+                                            ],
+                                            "reviews": [],
+                                            "name": "Realme",
+                                            "createdBy": "62d0f5b8a5f2f615ca007d41",
+                                            "category": "62d0fba397a1ca2f4b2fd79f",
+                                            "description": "something...",
+                                            "orginal_price": 7000,
+                                            "sell_price": 6500,
+                                            "status": 1,
+                                            "slug": "Realme",
+                                            "createdtime": 1657869009448,
+                                            "createdAt": "2022-07-15T07:10:09.484Z",
+                                            "updatedAt": "2022-07-15T07:10:09.484Z",
+                                            "__v": 0
+                                        }
+                                    ],
+                                    "total": 1,
+                                    "page": 1,
+                                    "pages": 1
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item": [
+                {
+                    "name": "Option",
+                    "item": [
+                        {
+                            "name": "optionadd",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "key": "banner",
+                                    "valueobject": [
+                                        {
+                                            "image": "https://gshopclone.s3.ap-south-1.amazonaws.com/NQJOHfQ1W-banner1.jpg",
+                                            "name": "Banner1",
+                                            "product": {}
+                                        }
+                                    ]
+                                },
+                                "url": "http://localhost:4000/iapi/optionAdd"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "valueobject": [
+                                        {
+                                            "name": "Banner1",
+                                            "image": "https://gshopclone.s3.ap-south-1.amazonaws.com/NQJOHfQ1W-banner1.jpg"
+                                        }
+                                    ],
+                                    "_id": "62d12a5df9d52c016125f2f1",
+                                    "key": "banner",
+                                    "status": 1,
+                                    "createdtime": 1657875037574,
+                                    "__v": 0
+                                }
+                            }
+                        },
+                        {
+                            "name": "productlist",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "Content-Type": "application/json",
+                                        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQwZWUxZmE5MDAzMzJkMTVhYmE0ODIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGZsaXAuY29tIiwicGhvbmUiOiIxMjM0NTY3ODkwIiwicm9sZSI6MSwiaWF0IjoxNjU3ODYwNTg0LCJleHAiOjE2NjA0NTI1ODR9.6rZNavkq4S7EC1pJqX_qSZHikJwWeR0PBSy7dXR47o0"
+                                    }
+                                ],
+                                "params": {
+                                    "pageVo": {
+                                        "pageNo": 1,
+                                        "noOfItems": 15
+                                    },
+                                    "status": 1,
+                                    "key": "banner"
+                                },
+                                "url": "http://localhost:4000/iapi/optionList"
+                            },
+                            "response": {
+                                "error_code": 0,
+                                "message": "Sucessfully added",
+                                "data": {
+                                    "docs": [
+                                        {
+                                            "_id": "62d12a5df9d52c016125f2f1",
+                                            "valueobject": [
+                                                {
+                                                    "name": "Banner1",
+                                                    "image": "https://gshopclone.s3.ap-south-1.amazonaws.com/NQJOHfQ1W-banner1.jpg"
+                                                }
+                                            ],
+                                            "key": "banner",
+                                            "status": 1,
+                                            "createdtime": 1657875037574,
+                                            "__v": 0,
+                                            "id": "62d12a5df9d52c016125f2f1"
+                                        }
+                                    ],
+                                    "total": 1,
+                                    "limit": 15,
+                                    "page": 1,
+                                    "pages": 1
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
