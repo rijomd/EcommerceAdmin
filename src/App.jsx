@@ -11,14 +11,14 @@ import { Header, Sidebar } from './Components';
 import { Login, SignUp } from './Container';
 import { Home } from './Home';
 import { Userlist, User } from './User';
-import { MainCategoryList, Category, SubCategoryList, GrandSubCategoryList ,MenuheaderList} from './Category';
+import { MainCategoryList, Category, SubCategoryList, GrandSubCategoryList, MenuheaderList } from './Category';
 import { BrandList } from './Brand';
 import { ProductsList, ProductSingleview } from './Products';
 import { HomeSlidebar } from './HomeDetails';
 import { ProductListhome } from './productListHome';
 import { Product_attribute } from './Product_Attributes';
 import { OfferList, OfferItemList } from './Offer';
-
+import {ExampleLogin} from './Example';
 import { alertActions } from "./_Actions/alertactions";
 
 
@@ -192,6 +192,12 @@ const App = () => {
                                 element={
                                     <PrivateRoutes><OfferItemList /></PrivateRoutes>
                                 } />
+
+
+                            <Route exact path="/exampleLogin"
+                                element={<ExampleLogin />} />
+
+
                         </Routes>
                     </div>
                 </Router>

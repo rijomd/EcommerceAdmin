@@ -34,7 +34,6 @@ export const ProductSingleview = (props) => {
                 if (res) {
                     let v = res[0];
                     let atribute_value = v.atribute_value;
-                    console.log(atribute_value, "atribute_value")
                     setAtribute_value(atribute_value);
                     setvarientData(v);
                     setLoading(false);
@@ -95,7 +94,6 @@ export const ProductSingleview = (props) => {
     }
 
     const changevarient = (value) => {
-        console.log(value, "value");
         setLoading(true);
         // if varients more than 30 need to change logic , call data from backend
         // else using array for reducing loading
@@ -104,9 +102,6 @@ export const ProductSingleview = (props) => {
             if (item.atribute_value && item.atribute_value.length > 0) {
                 for (let i of item.atribute_value) {
                     if (value === i) {
-                        console.log(i, "i....................");
-                        console.log(item.atribute_value, "atribute_value....................");
-                        console.log(item, "item...................");
                         setAtribute_value(item.atribute_value);
                         setvarientData(item);
                         setcount(count + 1);
@@ -118,7 +113,6 @@ export const ProductSingleview = (props) => {
     }
 
     const renderattributevalues = (values) => {
-        console.log("renderAttributes 11111111111");
         let myarray = [];
         if (values && values.length > 0) {
             for (let item of values) {
@@ -144,7 +138,6 @@ export const ProductSingleview = (props) => {
     }
 
     const renderAttributes = () => {
-        console.log("renderAttributes");
         let myarray = [];
         if (productData.saved_Attributes && productData.saved_Attributes.length > 0) {
             for (let item of productData.saved_Attributes) {

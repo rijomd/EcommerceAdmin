@@ -1,5 +1,5 @@
 import React, { useState, useEffect, } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { categoryList } from "../_Actions/categoryactions";
 import { Card, Container, Row, Col, Table, Button } from 'react-bootstrap';
 import { Loader } from "../Components/loader";
@@ -20,10 +20,12 @@ export const MenuheaderList = () => {
     //adding
     const [isCategoryAdd, setCategoryAdd] = useState(false);
     const [category, setMenuheaderList] = useState([]);
+
     const dispatch = useDispatch();
+    const categorylist = useSelector(state => state.category);
 
     //listing data
-    useEffect(() => { dispatch(categoryList(query)).then((res) => { if (res.length > 0) { setMenuheaderList(res) } }) }, [category.categorySingle]);
+    useEffect(() => { dispatch(categoryList(query)).then((res) => { if (res.length > 0) { setMenuheaderList(res) } }) }, [categorylist.categorySingle]);
 
     //category add
     const CategoryAddmodal = () => {
@@ -38,7 +40,9 @@ export const MenuheaderList = () => {
 
 
     //renderdata
-    const renderCategories = (catgories) => {
+    const renderCategories = (items) => {
+        let catgories = items.length > 0 && items[0].childs && items[0].childs.length > 0 && items[0].childs;
+        console.log(items, "")
         let categoryArray = [];
         for (let category of catgories) {
             categoryArray.push(
@@ -87,7 +91,7 @@ export const MenuheaderList = () => {
                                         </tbody>
                                     </Table>}
 
-                                {category.isListing && <Loader />}
+                                {categorylist.isListing && <Loader />}
                                 {category.length == 0 && <p> No Items Found</p>}
                             </Container>
                         </Col>
@@ -101,6 +105,7 @@ export const MenuheaderList = () => {
                 title="Menu Header Category"
                 show={isCategoryAdd}
                 handleCloseCategoryAdd={handleCloseCategoryAdd}
+                editdata={category}
             />
         </div>
     )

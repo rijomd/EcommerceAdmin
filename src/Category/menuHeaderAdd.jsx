@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export const MenuHeaderAdd = (props) => { // initializing
 
-    const { show, handleCloseCategoryAdd, title } = props;
+    const { show, handleCloseCategoryAdd, title, editdata } = props;
     const categorylist = useSelector(state => state.category);
     const dispatch = useDispatch();
 
@@ -42,8 +42,21 @@ export const MenuHeaderAdd = (props) => { // initializing
 
 
     useEffect(() => {
-        dispatch(categoryList(query)).then((res) => { if (res.length > 0) { setNumber(count + 1); } })
-    }, []);
+        if (editdata) {
+            let catgories = editdata.length > 0 && editdata[0].childs && editdata[0].childs.length > 0 && editdata[0].childs;
+            for (let item of catgories) {
+                let value = {
+                    _id: item._id,
+                    name: item.name
+                };
+                childs.push(
+                    value
+                );
+            }
+            setChilds(childs);
+        }
+        dispatch(categoryList(query)).then((res) => { if (res.length > 0) { setNumber(count + 1); } });
+    }, [show]);
 
 
     // closemodal

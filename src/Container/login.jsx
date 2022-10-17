@@ -73,6 +73,7 @@ export const Login = () => {
                     position: toast.POSITION.TOP_CENTER
                 });
                 setLogin(false);
+                window.location.reload();
                 navigate("/");
             }
         },

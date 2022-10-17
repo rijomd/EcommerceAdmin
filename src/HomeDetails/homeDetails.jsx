@@ -40,7 +40,7 @@ export const HomeSlidebar = () => {
     // }, []);
 
     const renderDetails = useMemo(() => {
-        let heaersArray = ["Homme Banner", "Home Sidebar", "login Image"];
+        let heaersArray = ["Homme Banner", "Product Banners", "login Image"];
         let arrays = [];
         for (let i = 0; i < heaersArray.length; i++) {
             let btnClass = false;
@@ -69,7 +69,7 @@ export const HomeSlidebar = () => {
             setBanner(false);
             setLoginImage(false);
             setSlider(true);
-            setBtnColor("Home Sidebar");
+            setBtnColor("Product Banners");
         }
         if (index === 2) {
             setSlider(false);
