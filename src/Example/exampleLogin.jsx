@@ -1,46 +1,40 @@
-import React, { useState } from 'react'
-import axios from '../_helpers/axios';
+import React, { useRef, useReducer } from 'react'
+import { Button } from 'react-bootstrap';
 
 export const ExampleLogin = () => {
 
-    const [username, setusername] = useState("");
-    const [password, setpassword] = useState("");
-    const [isErr, setError] = useState(false);
-
-
-    const changeUsername = (event) => {
-        setusername(event.target.value);
+   const fileinput = useRef();
+    const initialstate = {
+        name: "",
+        password: "",
     }
+    const reducer = (state, action) => {
+        console.log(state, "state");
+        console.log(action, "action");
 
-    const changePassword = (event) => {
-        setpassword(event.target.value);
-    }
-
-    const submitData = () => {
-        if (username && password) {
-            console.log("success");
-            setError(false);
-            let user = {
-                name: username,
-                password: password
-            };
-
-            let a = axios.post("/simplelogin", user);
-            console.log("a", a);
-        }
-        else {
-            setError(true);
+        switch (action.type) {
+            case "name": {
+                return {
+                    ...state,
+                    [action.name]: action.value
+                }
+            }
         }
     }
 
+    const [state, dispatch] = useReducer(reducer, initialstate);
+
+    const changeButton = () => {
+        fileinput.current.click();
+    }
     return (
         <div>
-            <input type="text" placeholder='Username' value={username} onChange={(e) => changeUsername(e)}>
+
+            <input type="text" placeholder='Password' value={state.name}
+                onChange={(e) => dispatch({ type: "name", name: "name", value: e.target.value })}>
             </input>
-            <input type="password" placeholder='Password' value={password} onChange={(e) => changePassword(e)}>
-            </input>
-            <button onClick={submitData}>Submit</button>
-            {isErr && <p> Please complete the form</p>}
+            <input ref={fileinput} type="file" placeholder='Password' value=""></input>
+            <Button onClick={changeButton}>submit</Button>
         </div>
     )
 }

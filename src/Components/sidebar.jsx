@@ -84,7 +84,7 @@ export const Sidebar = () => {
                     </MenuItem>
                 </SubMenu>
 
-                <SubMenu title="G-Offers" icon={<FaGem />}>
+                {/* <SubMenu title="G-Offers" icon={<FaGem />}>
                     <MenuItem icon={<FaGem />}>
                         <Link to="/offerlist" onClick={menuClose}>
                             OfferList
@@ -95,7 +95,7 @@ export const Sidebar = () => {
                             Offers
                         </Link>
                     </MenuItem>
-                </SubMenu>
+                </SubMenu> */}
 
 
 
