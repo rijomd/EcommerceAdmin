@@ -41,8 +41,9 @@ export const MenuheaderList = () => {
 
     //renderdata
     const renderCategories = (items) => {
-        let catgories = items.length > 0 && items[0].childs && items[0].childs.length > 0 && items[0].childs;
-        console.log(items, "")
+        let catgories = [];
+        console.log(items, "");
+        items.length > 0 && items[0].childs && items[0].childs.length > 0 ? catgories = items[0].childs : catgories = [];
         let categoryArray = [];
         for (let category of catgories) {
             categoryArray.push(

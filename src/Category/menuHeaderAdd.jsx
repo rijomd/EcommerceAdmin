@@ -43,7 +43,8 @@ export const MenuHeaderAdd = (props) => { // initializing
 
     useEffect(() => {
         if (editdata) {
-            let catgories = editdata.length > 0 && editdata[0].childs && editdata[0].childs.length > 0 && editdata[0].childs;
+        let catgories = [];
+            editdata.length > 0 && editdata[0].childs && editdata[0].childs.length > 0 ? catgories = editdata[0].childs : catgories = [];
             for (let item of catgories) {
                 let value = {
                     _id: item._id,
