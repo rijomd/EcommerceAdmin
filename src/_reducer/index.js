@@ -8,6 +8,8 @@ import { productReducer } from './productReducer';
 import { brandReducer } from './brandreducer';
 import { product_attributeReducer } from './product_attributeReducer';
 import { offerReducer } from './offerReducer';
+import { ordersReducer } from './/orderReducer';
+
 
 import { combineReducers } from 'redux';
 
@@ -23,7 +25,7 @@ const rootReducer = combineReducers({
     brand: brandReducer,
     product_attribute: product_attributeReducer,
     offer: offerReducer,
-
+    order: ordersReducer,
 });
 
 export default rootReducer;
